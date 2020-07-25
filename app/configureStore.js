@@ -2,7 +2,7 @@
  * Create the store with dynamic reducers
  */
 
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import { routerMiddleware } from 'connected-react-router';
 import { createInjectorsEnhancer, forceReducerReload } from 'redux-injectors';
 import createSagaMiddleware from 'redux-saga';
@@ -29,7 +29,7 @@ export default function configureAppStore(initialState = {}, history) {
   const store = configureStore({
     reducer: createReducer(),
     preloadedState: initialState,
-    middleware: [...getDefaultMiddleware(), ...middlewares],
+    middleware: [...middlewares],
     enhancers,
   });
 

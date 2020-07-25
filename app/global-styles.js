@@ -16,6 +16,13 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100%;
     min-width: 100%;
   }
+  nav {
+    background-color: #ccc;
+  }
+
+  .centered {
+    margin: 10px 20px;
+  }
 
   p,
   label {
@@ -26,6 +33,15 @@ const GlobalStyle = createGlobalStyle`
   input, select {
     font-family: inherit;
     font-size: inherit;
+  }
+  .react-bootstrap-table table {
+    table-layout: auto !important;
+  }
+  li.item {
+    margin: 10px;
+  }
+  .count {
+    margin: 0 10px;
   }
 `;
 

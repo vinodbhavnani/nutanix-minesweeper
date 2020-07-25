@@ -9,35 +9,28 @@
 
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 
 import { hot } from 'react-hot-loader/root';
 import HomePage from 'containers/HomePage/Loadable';
-import FeaturePage from 'containers/FeaturePage/Loadable';
+import GamePage from 'containers/GamePage/connect';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 // Header and Footer
 import Header from 'components/Header';
-import Footer from 'components/Footer';
 
 import GlobalStyle from '../../global-styles';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 
 function App() {
   return (
     <div>
-      <Helmet
-        titleTemplate="%s - React.js Boilerplate"
-        defaultTitle="React.js Boilerplate"
-      >
-        <meta name="description" content="A React.js Boilerplate application" />
-      </Helmet>
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
-        <Route path="/features" component={FeaturePage} />
+        <Route path="/game" component={GamePage} />
         <Route path="" component={NotFoundPage} />
       </Switch>
-      <Footer />
       <GlobalStyle />
     </div>
   );
